@@ -16,7 +16,7 @@ const routes: Routes = [
         loadChildren: './ingreso-egreso/ingreso-egreso.module#IngresoEgresoModule',
         canLoad: [ AuthGuardService ]
     },
-    //{ path: '**', redirectTo: '' },
+    { path: '**', redirectTo: '' },
 
 ];
 

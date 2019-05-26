@@ -30,7 +30,9 @@ export class IngresoEgresoService {
     });
    }
 
-  initIngresoEgredoListener(){
+  initIngresoEgredoListener(){   
+
+    console.log('initIngresoEgredoListener');
   
    this.ingresoEgresoListenerSubcription= this.store.select('auth')
       .pipe(

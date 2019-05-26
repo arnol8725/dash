@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { ActivarLoadingAction, DesactivarLoadingAction } from '../shared/ui.actions';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-ingreso-egreso',
   templateUrl: './ingreso-egreso.component.html',
@@ -17,21 +18,27 @@ export class IngresoEgresoComponent implements OnInit,OnDestroy {
   forma: FormGroup;
   tipo = "ingreso";
   cargando= false;
-
+          
   loadingSubs = new Subscription();
 
-  constructor(private serviceIngresoEgreso:IngresoEgresoService,
+  constructor(private serviceIngresoEgreso:IngresoEgresoService, private router : Router,
               private store: Store<AppState>
               ) { }
 
   ngOnInit() {
-  this.loadingSubs =  this.store.select('ui').subscribe( ui => this.cargando = ui.isLoading);
+  this.loadingSubs =  this.store.select('ui').subscribe( (ui) => {
+    this.cargando = ui.isLoading
+    console.log(this.cargando);
+    
+  });
 
      this.forma = new FormGroup({
           'description': new FormControl('',Validators.required),
           'monto': new FormControl(0,Validators.min(0))
           
      });
+
+
 
   }
 

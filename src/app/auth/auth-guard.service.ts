@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad } from '@angular/router';
+import { CanActivate, CanLoad, Route, UrlSegment } from '@angular/router';
 import { AuthService } from './auth.service';
 import { take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class AuthGuardService implements CanActivate, CanLoad {
 
 
   canLoad() {
+    console.log('canLoad');
     return this.authService.isAuth()
               .pipe(
                 take(1)
@@ -24,3 +26,4 @@ export class AuthGuardService implements CanActivate, CanLoad {
 
 
 }
+

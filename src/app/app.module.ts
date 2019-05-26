@@ -33,6 +33,8 @@ import { ChartsModule } from 'ng2-charts';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { IngresoEgresoModule } from './ingreso-egreso/ingreso-egreso.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,9 +53,9 @@ import { IngresoEgresoModule } from './ingreso-egreso/ingreso-egreso.module';
     BrowserModule,
     AuthModule,
     //SharedModule,
-       IngresoEgresoModule,
+      // IngresoEgresoModul, No se debe de agregar los componentes si es con carga peresosa
     //FormsModule,
-    //ReactiveFormsModule,
+    //ReactiveFormsModule, 
     AngularFireModule.initializeApp(environment.firebase, 'ingreso-egreso-app'),
     AngularFirestoreModule,
     //AngularFireAuthModule,

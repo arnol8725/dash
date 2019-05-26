@@ -2,13 +2,15 @@ import { EstadisticaComponent } from '../ingreso-egreso/estadistica/estadistica.
 import { IngresoEgresoComponent } from '../ingreso-egreso/ingreso-egreso.component';
 import { Routes } from '@angular/router';
 import { DetalleComponent } from '../ingreso-egreso/detalle/detalle.component';
+import { AuthGuardService } from '../auth/auth-guard.service';
 
 
 
-export const dashboarRoutes: Routes = [
-    {path:'',component:EstadisticaComponent},
-    {path:'ingreso-egreso',component:IngresoEgresoComponent},
-    {path:'detalle',component:DetalleComponent},
-  ];
-  
+export const dashboardRoutes: Routes = [
+
+  { path: '', component: EstadisticaComponent },
+  { path: 'ingreso-egreso', component: IngresoEgresoComponent },
+  { path: 'detalle', component: DetalleComponent },
+ 
+ ];
  

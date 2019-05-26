@@ -64,6 +64,7 @@ initAuthListener(){
           }else{
             this.user= null;
             this.userSubscripstion.unsubscribe();
+            this.router.navigate(['/login']);
           }
       });
 }
@@ -90,7 +91,7 @@ initAuthListener(){
           .then( () => {
             //console.error('Entro afDB');
             //Swal.close();
-            this.router.navigate(['/']);
+            this.router.navigate(['/dashboard/estadistica']);
             this.store.dispatch(new DesactivarLoadingAction());
           });
           
@@ -114,7 +115,7 @@ initAuthListener(){
       console.log(resp);
       //Swal.close();
         this.store.dispatch(new DesactivarLoadingAction());
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard/estadistica']);
     })
     .catch( error => {   
         console.error(error);
